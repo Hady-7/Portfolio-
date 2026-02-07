@@ -10,11 +10,11 @@ type StaggerProps = {
 
 const container = {
   hidden: { opacity: 0 },
-  visible: (stagger: number) => ({
+  visible: ({ stagger, delay }: { stagger: number; delay: number }) => ({
     opacity: 1,
     transition: {
       staggerChildren: stagger,
-      delayChildren: 0.1,
+      delayChildren: delay,
     },
   }),
 };
@@ -24,7 +24,7 @@ const item = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const },
   },
 };
 
@@ -40,7 +40,7 @@ export function Stagger({
       variants={container}
       initial="hidden"
       animate="visible"
-      custom={staggerDelay}
+      custom={{ stagger: staggerDelay, delay: delayChildren }}
     >
       {children}
     </motion.div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ThemeToggle } from "../ThemeToggle.tsx";
+import { portfolio } from "../../data/portfolio.ts";
 
 const navLinks = [
   { href: "#experience", label: "Experience" },
@@ -15,14 +16,14 @@ export function Header() {
       className="sticky top-0 z-50 w-full border-b border-zinc-200/80 dark:border-zinc-700/50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md transition-colors duration-200 ease-out"
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
     >
       <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a
-          href="#"
+          href="#hero"
           className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-[200ms] ease-out"
         >
-          Portfolio
+          {portfolio.name}
         </a>
         <nav className="hidden sm:flex items-center gap-1" aria-label="Main">
           {navLinks.map(({ href, label }) => (

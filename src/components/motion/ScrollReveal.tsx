@@ -13,7 +13,7 @@ type ScrollRevealProps = {
 
 const offset = 24;
 const duration = 0.5;
-const ease = [0.16, 1, 0.3, 1];
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export function ScrollReveal({
   children,

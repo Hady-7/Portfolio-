@@ -1,0 +1,204 @@
+@import "tailwindcss";
+@config "../tailwind.config.cjs";
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Cohesive accent – violet for light/dark */
+  --color-accent-50: oklch(0.98 0.02 285);
+  --color-accent-100: oklch(0.94 0.04 285);
+  --color-accent-200: oklch(0.88 0.08 285);
+  --color-accent-300: oklch(0.78 0.12 285);
+  --color-accent-400: oklch(0.68 0.16 285);
+  --color-accent-500: oklch(0.58 0.2 285);
+  --color-accent-600: oklch(0.5 0.2 285);
+  --color-accent-700: oklch(0.42 0.16 285);
+  --color-accent-800: oklch(0.36 0.12 285);
+  --color-accent-900: oklch(0.28 0.08 285);
+  --color-accent-950: oklch(0.18 0.05 285);
+  /* Motion – premium hover timing */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 250ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased min-h-screen bg-background text-foreground;
+  transition: background-color var(--duration-normal) var(--ease-out-expo),
+    color var(--duration-normal) var(--ease-out-expo);
+}
+
+/* Gradient mesh for hero (works with light/dark) */
+.gradient-mesh {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.6 0.15 285 / 0.2), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, oklch(0.55 0.12 285 / 0.12), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 80%, oklch(0.5 0.1 285 / 0.1), transparent);
+}
+
+.dark .gradient-mesh {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.5 0.2 285 / 0.25), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, oklch(0.45 0.15 285 / 0.15), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 80%, oklch(0.4 0.12 285 / 0.12), transparent);
+}
+
+/* Hero animated gradient (CSS approach – smooth, lightweight, scales on any screen) */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    270deg,
+    oklch(0.55 0.22 285 / 0.18),
+    oklch(0.62 0.2 320 / 0.16),
+    oklch(0.5 0.24 250 / 0.18),
+    oklch(0.58 0.2 285 / 0.18)
+  );
+  background-size: 600% 600%;
+  animation: gradientMove 5s ease infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dark .hero-bg {
+  background: linear-gradient(
+    270deg,
+    oklch(0.48 0.22 285 / 0.28),
+    oklch(0.52 0.2 320 / 0.24),
+    oklch(0.42 0.24 250 / 0.28),
+    oklch(0.48 0.22 285 / 0.28)
+  );
+  background-size: 600% 600%;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero background animations */
+@keyframes hero-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.98); }
+}
+
+@keyframes hero-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 25px) scale(1.03); }
+  66% { transform: translate(20px, -15px) scale(0.97); }
+}
+
+@keyframes hero-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, 20px) scale(1.04); }
+}
+
+@keyframes hero-pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+/* Section alt background – soft contrast */
+.section-alt {
+  @apply bg-zinc-100/90 dark:bg-zinc-900/40;
+}
+
+/* Spacing scale: 4=1rem, 8=2rem, 16=4rem, 24=6rem (section padding) */
+/* Card system – consistent border, radius, elevation */
+.card-base {
+  @apply border border-zinc-200/90 dark:border-zinc-700/80 rounded-xl bg-white dark:bg-zinc-900/50;
+  transition: transform var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.card-hover {
+  @apply hover:-translate-y-0.5 hover:border-violet-400/25 dark:hover:border-violet-400/20;
+  box-shadow: 0 0 0 1px transparent;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 24px -6px rgba(139, 92, 246, 0.08), 0 0 0 1px rgba(139, 92, 246, 0.08);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(139, 92, 246, 0.12);
+}
+
+/* Soft gradient accent under section titles */
+.section-heading-accent {
+  width: 2.5rem;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, rgb(139 92 246 / 0.6), transparent);
+}
+
+.dark .section-heading-accent {
+  background: linear-gradient(90deg, rgb(167 139 250 / 0.5), transparent);
+}
+
+/* Subtle gradient divider between sections */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(0 0 0 / 0.06) 15%, rgb(0 0 0 / 0.06) 85%, transparent);
+}
+
+.dark .section-divider {
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.06) 15%, rgb(255 255 255 / 0.06) 85%, transparent);
+}
+
+/* Card: soft gradient top edge on hover */
+.card-gradient-edge {
+  position: relative;
+}
+
+.card-gradient-edge::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, rgb(139 92 246 / 0.35), transparent);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+  pointer-events: none;
+}
+
+.card-gradient-edge:hover::before {
+  opacity: 1;
+}
+
+.dark .card-gradient-edge::before {
+  background: linear-gradient(90deg, transparent, rgb(167 139 250 / 0.3), transparent);
+}
+
+/* Form inputs – clear border and focus; no inner white border on focus */
+.input-base {
+  @apply border border-zinc-300/90 dark:border-zinc-600/90 rounded-lg bg-white dark:bg-zinc-900/80 transition-colors duration-200;
+}
+
+.input-focus {
+  @apply focus:border-violet-500 focus-visible:ring-2 focus-visible:ring-violet-500/20 dark:focus:border-violet-400 dark:focus-visible:ring-violet-400/20;
+}
+
+/* HeroUI: remove inner white border/ring on focused input/textarea */
+[data-slot="input-wrapper"]:focus-within input,
+[data-slot="input-wrapper"]:focus-within textarea {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Typography – readable body text (WCAG AA) */
+.prose-body {
+  @apply leading-relaxed text-zinc-600 dark:text-zinc-400;
+}

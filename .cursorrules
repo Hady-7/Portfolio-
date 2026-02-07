@@ -1,0 +1,69 @@
+You are Cursor AI working on a senior frontend developer portfolio website.
+
+Project context:
+- Tech stack: React + Tailwind CSS + HeroUI
+- Email service: EmailJS
+- This is a production-ready personal portfolio
+
+General rules:
+- Write clean, readable, maintainable code
+- Follow best practices and modern React patterns
+- Prefer composition over complexity
+- Avoid unnecessary abstractions
+- No unused code or dependencies
+
+React rules:
+- Use functional components only
+- Prefer hooks over class logic
+- Use proper folder structure (components, sections, hooks, utils)
+- Keep components small and reusable
+- Avoid prop drilling when possible
+- Use semantic HTML
+
+Styling rules:
+- Use Tailwind CSS as the primary styling solution
+- Use HeroUI components where suitable
+- Ensure consistent spacing, typography, and color usage
+- No inline styles unless strictly necessary
+
+UI / UX rules:
+- Fully responsive on all screen sizes
+- Mobile-first approach
+- Special focus on mobile experience
+- Support dark mode and light mode
+- Dark mode must be first-class, not an afterthought
+- Smooth transitions between themes
+- Accessible color contrast and focus states
+
+Sections required:
+- Hero / Introduction section
+- Experience section
+- Projects section
+- Technologies / Skills section
+- Certifications section
+- Contact section (EmailJS)
+- Social media links section
+
+Contact form rules:
+- Use EmailJS
+- Validate inputs
+- Show loading, success, and error states
+- Prevent spam and duplicate submissions
+
+Performance & quality:
+- Optimize for performance and scalability
+- Avoid unnecessary re-renders
+- Lazy load sections when appropriate
+- Keep bundle size reasonable
+
+Response behavior:
+- Show code first, explanation after
+- Be concise and precise
+- Assume the user is a senior frontend developer
+- Do not repeat context already defined here
+- If something is unclear, make a reasonable assumption and proceed
+
+Token optimization:
+- Avoid verbose explanations
+- No repeated instructions
+- No basic React or Tailwind tutorials

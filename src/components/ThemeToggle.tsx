@@ -10,7 +10,7 @@ export function ThemeToggle() {
       <Button
         isIconOnly
         variant="flat"
-        radius="2xl"
+        radius="lg"
         aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
         onPress={toggleTheme}
         className="min-w-10 min-h-11 py-2.5 rounded-3xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 disabled:opacity-60 transition-colors"

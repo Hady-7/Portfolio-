@@ -250,7 +250,7 @@ export function Contact() {
                     type="submit"
                     color="primary"
                     size="lg"
-                    radius="2xl"
+                    radius="lg"
                     isLoading={isDisabled}
                     isDisabled={isDisabled}
                     className="w-full sm:w-auto min-w-[140px] font-medium py-3.5 rounded-3xl bg-violet-600 text-white hover:bg-violet-700 active:bg-violet-800 focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950 disabled:opacity-60 disabled:pointer-events-none transition-colors duration-[200ms] ease-out"

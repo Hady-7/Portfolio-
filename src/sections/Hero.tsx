@@ -67,7 +67,7 @@ export function Hero() {
                 href="#projects"
                 color="primary"
                 size="lg"
-                radius="2xl"
+                radius="lg"
                 className="min-w-[160px] py-3 font-medium transition-transform hover:scale-[1.02] active:scale-100"
               >
                 {portfolio.ctaPrimary}
@@ -77,7 +77,7 @@ export function Hero() {
                 href="#contact"
                 variant="bordered"
                 size="lg"
-                radius="2xl"
+                radius="lg"
                 className="min-w-[160px] py-3 font-medium border-2 border-violet-500/50 dark:border-violet-400/50 text-violet-600 dark:text-violet-400 hover:bg-violet-500/10 dark:hover:bg-violet-400/10 transition-all hover:scale-105 active:scale-100"
               >
                 {portfolio.ctaSecondary}

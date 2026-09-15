@@ -83,6 +83,15 @@ export const experience = [
 
 export const projects = [
   {
+    id: "7",
+    title: "Medlemo",
+    description:
+      "Medlemo is an all-in-one MCCQE prep platform that brings live and recorded sessions, notes, flashcards, a question bank, mock exams, progress tracking, and instructor follow-up into a single study home — so candidates can focus on learning instead of juggling tools.",
+    tech: ["WordPress"],
+    liveUrl: "https://medlemo.com/",
+    image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fmedlemo.com%2F/opengraph/",
+  },
+  {
     id: "1",
     title: "Binder",
     description:
@@ -117,6 +126,24 @@ export const projects = [
     tech: ["React", "TypeScript", "Tailwind CSS", "Responsive"],
     liveUrl: "https://www.atumion.com/",
     image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.atumion.com%2F/opengraph/",
+  },
+  {
+    id: "5",
+    title: "GT1 Motors",
+    description:
+      "GT1 Motors is a luxury vehicle import concierge based in Egypt, helping clients go from dream car to driveway. The platform showcases high-end inventory and guides users through worldwide vehicle search, inspection, purchase approval, international shipping, customs clearance, registration, and doorstep delivery.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Responsive"],
+    liveUrl: "https://gt1-omega.vercel.app/",
+    image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fgt1-omega.vercel.app%2F/opengraph/",
+  },
+  {
+    id: "6",
+    title: "InstaCare",
+    description:
+      "InstaCare is a dental clinic website focused on cosmetic and restorative care — veneers, whitening, implants, orthodontics, and smile makeovers. It highlights services, doctor profiles, before/after cases, and WhatsApp booking in a polished, mobile-first experience for patients in Egypt.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Responsive"],
+    liveUrl: "https://www.instacare.online/",
+    image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.instacare.online%2F/opengraph/",
   },
 ] as const;
 
